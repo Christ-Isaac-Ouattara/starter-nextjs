@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { Search, ChevronDown, ArrowLeft, Filter } from "lucide-react";
+import React from "react";
+import {  ChevronDown,} from "lucide-react";
 import {PreferenceHorizontalIcon} from "hugeicons-react"
 import {
   Dropdown,
@@ -14,23 +14,12 @@ import {
 interface Category {
   id: string;
   name: string;
-  icon: JSX.Element;
+  icon: string;
 }
 
 export const FilterComponent = () => {
-  // const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedFiltre, setSelectedFiltre] = React.useState(new Set(["Filtre"]));
-  const [selectedCategory, setSelectedCategory] = React.useState(new Set(["Categories"]));
-
-  const selectedCategoryValue = React.useMemo(
-    () => Array.from(selectedCategory).join(", ").replace(/_/g, ""),
-    [selectedCategory]
-  );
-
-  const selectedFiltreValue = React.useMemo(
-    () => Array.from(selectedFiltre).join(", ").replace(/_/g, ""),
-    [selectedFiltre]
-  );
+  const [selectedFiltre, setSelectedFiltre] = React.useState<Set<string>>(new Set(["Filtre"]));
+  const [selectedCategory, setSelectedCategory] = React.useState<Set<string>>(new Set(["Categories"]));
 
   const categories: Category[] = [
     { id: "shirt", name: "T-shirt", icon: "👕" },
@@ -53,7 +42,7 @@ export const FilterComponent = () => {
               <Dropdown>
                 <DropdownTrigger>
                   <Button className="capitalize text-white" variant="bordered">
-                    {selectedFiltre}<PreferenceHorizontalIcon className="w-4 h-4" />
+                    {Array.from(selectedFiltre)[0]}<PreferenceHorizontalIcon className="w-4 h-4" />
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu
@@ -62,7 +51,7 @@ export const FilterComponent = () => {
                   selectedKeys={selectedFiltre}
                   selectionMode="single"
                   variant="flat"
-                  onSelectionChange={setSelectedFiltre}
+                  onSelectionChange={(keys) => setSelectedFiltre(new Set(keys as string[]))}
                 >
                   {filters.map((filter) => (
                     <DropdownItem key={`${filter.id}`}>
@@ -71,21 +60,12 @@ export const FilterComponent = () => {
                   ))}
                 </DropdownMenu>
               </Dropdown>
-              {/* {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border-zinc-700 text-zinc-100 border whitespace-nowrap"
-                >
-                  {filter.name}
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-              ))} */}
             </div>
 
             <Dropdown>
               <DropdownTrigger>
                 <Button className="capitalize text-white" variant="bordered">
-                  {selectedCategory}<ChevronDown className="w-4 h-4" />
+                  {Array.from(selectedCategory)[0]}<ChevronDown className="w-4 h-4" />
                 </Button>
               </DropdownTrigger>
               <DropdownMenu
@@ -94,7 +74,7 @@ export const FilterComponent = () => {
                 selectedKeys={selectedCategory}
                 selectionMode="single"
                 variant="flat"
-                onSelectionChange={setSelectedCategory}
+                onSelectionChange={(keys) => setSelectedCategory(new Set(keys as string[]))}
               >
                 {categories.map((category) => (
                   <DropdownItem startContent={`${category.icon}`} key={`${category.id}`}>
@@ -103,23 +83,6 @@ export const FilterComponent = () => {
                 ))}
               </DropdownMenu>
             </Dropdown>
-
-            {/* <ul className=" items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border-zinc-700 text-zinc-100 border whitespace-nowrap">
-              {categories.map((category) => (
-                <div
-                  className="flex flex-col items-center gap-2"
-                  key={category.id}
-                >
-                  <button
-                    key={category.id}
-                    className="flex rounded-full  items-center gap-2 p-4 bg-zinc-900 hover:bg-zinc-800 border-zinc-700 text-zinc-100 border"
-                  >
-                    <span className="text-xl">{category.icon}</span>
-                  </button>
-                  <span className="text-sm text-zinc-100">{category.name}</span>
-                </div>
-              ))}
-            </ul> */}
           </div>
         </div>
       </div>

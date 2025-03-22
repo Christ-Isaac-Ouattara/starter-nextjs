@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     unoptimized: true
   },
@@ -11,37 +10,13 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    turbo: {
-      resolveExtensions: [
-        '.mdx',
-        '.tsx',
-        '.ts',
-        '.jsx',
-        '.js',
-        '.mjs',
-        '.json',
-        '.mp4',
-      ],
-    },
-  },
+  // env: {
+  //   NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  //   NEXT_PUBLIC_MARCHAND_URL: process.env.NEXT_PUBLIC_MARCHAND_URL,
+  //   NEXT_PUBLIC_USERNAME_MTARGET: process.env.NEXT_PUBLIC_USERNAME_MTARGET,
+  //   NEXT_PUBLIC_PASSWORD_MTARGET: process.env.NEXT_PUBLIC_PASSWORD_MTARGET,
+  //   NEXT_PUBLIC_SENDER_MTARGET: process.env.NEXT_PUBLIC_SENDER_MTARGET,
+  // },
 };
 
-module.exports = {
-  experimental: {
-    turbo: {
-      resolveExtensions: [
-        '.mdx',
-        '.tsx',
-        '.ts',
-        '.jsx',
-        '.js',
-        '.mjs',
-        '.json',
-        '.mp4',
-      ],
-    },
-  },
-}
-
-export default (nextConfig);
+module.exports = nextConfig;
