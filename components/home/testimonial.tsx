@@ -20,21 +20,21 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="py-12 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-xl font-medium text-gray-700 mb-8">Témoignage</h3>
+        <h3 className="text-4xl font-medium text-gray-200 mb-8">Témoignage</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col">
-            <p className="text-gray-600 mb-4">
-              Feel free to leave your feedback by attaching a photo. It helps a lot to support our business for you.
+            <p className="text-gray-200 mb-4">
+              Sent toi libre de laisser un avis avec ta photo. ça nous aide énormement à améliorer notre service.
             </p>
             <button className="inline-flex items-center bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors self-start">
-              <span className="mr-2">Write a review</span>
+              <span className="mr-2">Donner un avis</span>
               <MessageSquare size={16} />
             </button>
             
             <div className="mt-auto pt-8">
               <div className="flex items-center">
-                <span className="text-gray-600 text-sm mr-2">124 reviews</span>
+                <span className="text-gray-600 text-sm mr-2">124 avis</span>
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span key={star} className="text-yellow-400">★</span>
@@ -44,8 +44,8 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-6">
-            <div className="rounded-lg overflow-hidden">
+          <div className="md:grid  grid-cols-2 gap-6">
+            <div className="rounded-lg mb-4 md:mb-0 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="T-shirt model" 

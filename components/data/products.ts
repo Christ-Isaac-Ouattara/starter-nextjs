@@ -8,7 +8,8 @@ export interface Product {
   id: string;
   name: string;
   price: number;
-  image: string;
+  image: string[];
+  description: string;
 }
 
 export const categories: Category[] = [
@@ -29,38 +30,47 @@ export const filters = [
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Acme Slip-On Shoes',
-    price: 7500,
-    image: '/images/s-bl.png',
+    name: 'T-shirt snob',
+    price: 7499,
+    image: [
+      '/images/s-bl.png',
+      '/images/s-be.png',
+      '/images/complet-t-shirt-gris.png',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
   {
     id: '2',
-    name: 'Acme Circles T-Shirt',
-    price: 7500,
-    image: '/images/s-be.png',
+    name: 'T-Shirt snob délaver',
+    price: 7499,
+    image: [
+      '/images/s-nrc.png',
+      '/images/s-nrc.png',
+      '/images/s-nrc.png',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
   {
     id: '3',
-    name: 'Acme Drawstring Bag',
-    price: 7500,
-    image: '/images/s-nr.png',
+    name: 'Pull snob',
+    price: 9999,
+    image: [
+      '/images/hoodie-gris.png',
+      '/images/hoodie-noire.png',
+      '/images/complet-hoodie-noire.png',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
   {
     id: '4',
-    name: 'Acme Keyboard',
-    price: 7500,
-    image: '/images/s-rs.png',
+    name: 'Crop top snob',
+    price: 3999,
+    image: [
+      '/images/crop-top-blanc-porté-2.jpg',
+      '/images/crop-top-blanc-porté.jpg',
+      '/images/crop.jpg',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
-  {
-    id: '5',
-    name: 'Acme Prism T-Shirt',
-    price: 25.00,
-    image: '/images/crop.jpg',
-  },
-  {
-    id: '6',
-    name: 'Acme T-Shirt',
-    price: 7500,
-    image: '/images/s-nrc.png',
-  },
+  
 ];

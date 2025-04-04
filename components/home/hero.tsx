@@ -82,15 +82,15 @@ export const Hero = () => {
     <section className="relative  h-screen bg-slate-700 overflow-hidden flex items-center">
       <div ref={imageRef} className="absolute inset-0 z-10">
         <img
-          src="/images/model-shirt.png"
+          src="/images/complet-t-shirt-gris.png"
           alt="Model wearing black t-shirt with print"
-          className="md:w-3/5 w-full h-full object-cover"
+          className="md:w-3/5 w-full h-full object-center object-cover"
         />
       </div>
 
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/90 to-transparent z-20"
+        className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#1a1a1a]/90 to-transparent z-20"
       ></div>
 
       <div className="relative flex justify-end z-30 max-w-7xl mx-auto px-4 md:px-8 w-full">
@@ -135,7 +135,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         ref={navigationRef}
         className="absolute right-6 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 z-30"
       >
@@ -146,7 +146,7 @@ export const Hero = () => {
         <button className="bg-white rounded-full p-2 hover:bg-gray-200 transition-colors">
           <ArrowDown size={20} className="text-gray-800" />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

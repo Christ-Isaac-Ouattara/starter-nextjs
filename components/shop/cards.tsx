@@ -1,6 +1,9 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
 import { products } from "@/components/data/products";
+import {Card as CardUi  , CardFooter, Image, Button } from "@heroui/react";
 
 interface Product {
   id: string;
@@ -127,15 +130,13 @@ export const Card = () => {
               )}
             >
               <img
-                src={product.image}
+                src={product.image[0]}
                 alt={product.name}
                 width={500}
                 height={500}
                 className="relative h-full w-full object-cover transition duration-300 ease-in-out group-hover:scale-105"
               />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/60 to-transparent z-20"
-              ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/30 to-transparent z-20"></div>
               <div className="absolute bottom-4 left-0 right-0 mx-4 z-30">
                 <div className="flex items-center justify-between rounded-full border bg-white/70 py-1 pr-1 pl-2 text-xs font-semibold text-black backdrop-blur-sm dark:border-neutral-800 dark:bg-black/70 dark:text-white">
                   <h3 className="line-clamp-1">{product.name}</h3>
@@ -151,6 +152,29 @@ export const Card = () => {
               </div>
             </div>
           </Link>
+        ))}
+        {products.map((product) => (
+          <CardUi key={product.id} isFooterBlurred className="border-none" radius="lg">
+            <Image
+              src={product.image[0]}
+              alt={product.name}
+              width={400}
+              height={400}
+              className="relative h-full w-full object-cover transition duration-300 ease-in-out group-hover:scale-105"
+            />
+            <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+              <p className="text-tiny text-black">Available soon.</p>
+              <Button
+                className="text-tiny text-white bg-black/20"
+                color="default"
+                radius="lg"
+                size="sm"
+                variant="flat"
+              >
+                Notify me
+              </Button>
+            </CardFooter>
+          </CardUi>
         ))}
       </div>
     </>

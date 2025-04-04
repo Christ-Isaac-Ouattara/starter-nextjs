@@ -6,14 +6,19 @@ import { ArrowRight02Icon, ArrowLeft02Icon } from "hugeicons-react";
 import { products } from "@/components/data/products";
 import { useState } from "react";
 import Link from "next/link";
+import { useCartStore } from "@/stores/cartStore";
+import { toast } from "react-hot-toast";
 
 export default function ProductDetail() {
   const params = useParams();
   const id = params.id as string;
   const product = products.find((p) => p.id === id);
   const [selectedSize, setSelectedSize] = useState("M");
-  const [selectedColor, setSelectedColor] = useState("Black");
+  const [selectedColor, setSelectedColor] = useState("Noir");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  
+  const { addItem } = useCartStore();
 
   if (!product) {
     return (
@@ -24,8 +29,23 @@ export default function ProductDetail() {
   }
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
-  const colors = ["Black", "White", "Blue"];
-  const productImages = [product.image, product.image, product.image];
+  const colors = ["Blanc", "Noir", "Rose", "Beige"];
+  // const product.image = [product.image, product.image, product.image];
+
+  const handleAddToCart = () => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      printNumber: product.printNumber,
+      size: selectedSize,
+      color: selectedColor,
+      quantity: quantity
+    });
+    
+    toast.success('Produit ajouté au panier');
+  };
 
   return (
     <div className="mt-16 ">
@@ -48,7 +68,7 @@ export default function ProductDetail() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
               <img
-                src={productImages[currentImageIndex]}
+                src={product.image[currentImageIndex]}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
@@ -59,7 +79,7 @@ export default function ProductDetail() {
                 <button
                   onClick={() =>
                     setCurrentImageIndex((prev) =>
-                      prev > 0 ? prev - 1 : productImages.length - 1
+                      prev > 0 ? prev - 1 : product.image.length - 1
                     )
                   }
                   className="z-20 p-1 hover:scale-125 transition-all duration-300"
@@ -69,7 +89,7 @@ export default function ProductDetail() {
                 <button
                   onClick={() =>
                     setCurrentImageIndex((prev) =>
-                      prev < productImages.length - 1 ? prev + 1 : 0
+                      prev < product.image.length - 1 ? prev + 1 : 0
                     )
                   }
                   className="z-20 p-1 hover:scale-125 transition-all duration-300"
@@ -81,7 +101,7 @@ export default function ProductDetail() {
 
             {/* Thumbnail Navigation */}
             <div className="flex justify-center gap-4 mt-4">
-              {productImages.map((_, index) => (
+              {product.image.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
@@ -92,7 +112,7 @@ export default function ProductDetail() {
                   }`}
                 >
                   <img
-                    src={productImages[index]}
+                    src={product.image[index]}
                     alt={`${product.name} view ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
@@ -111,9 +131,9 @@ export default function ProductDetail() {
             </div>
 
             {/* Color Selection */}
-            <div className="mt-8">
+            <div className="mt-8 ">
               <h3 className="text-sm font-medium text-gray-200">COLOR</h3>
-              <div className="flex gap-3 mt-2">
+              <div className="flex flex-wrap gap-3 mt-2">
                 {colors.map((color) => (
                   <button
                     key={color}
@@ -131,9 +151,9 @@ export default function ProductDetail() {
             </div>
 
             {/* Size Selection */}
-            <div className="mt-8">
+            <div className="mt-8 ">
               <h3 className="text-sm font-medium text-gray-200">SIZE</h3>
-              <div className="flex gap-2 mt-2">
+              <div className="flex flex-wrap gap-2 mt-2">
                 {sizes.map((size) => (
                   <button
                     key={size}
@@ -150,15 +170,38 @@ export default function ProductDetail() {
               </div>
             </div>
 
+            {/* Quantity Selection */}
+            <div className="mt-8">
+              <h3 className="text-sm font-medium text-gray-200">QUANTITÉ</h3>
+              <div className="flex items-center mt-2 border rounded-lg w-fit">
+                <button 
+                  className="px-4 py-2 text-gray-400 hover:text-violet-500"
+                  onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                >
+                  -
+                </button>
+                <span className="px-4 py-2 text-gray-200">{quantity}</span>
+                <button 
+                  className="px-4 py-2 text-gray-400 hover:text-violet-500"
+                  onClick={() => setQuantity(prev => prev + 1)}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
             {/* Product Description */}
             <div className="mt-8">
               <p className="text-gray-200">
-                50% combed ringspun cotton/40% polyester jersey tee.
+              {product.description}
               </p>
             </div>
 
             {/* Add to Cart Button */}
-            <button className="mt-8 w-full bg-violet-500 text-white py-4 px-8 rounded-xl font-medium hover:bg-violet-600 transition-colors">
+            <button 
+              onClick={handleAddToCart}
+              className="mt-8 w-full bg-violet-500 text-white py-4 px-8 rounded-xl font-medium hover:bg-violet-600 transition-colors"
+            >
               Ajouter au panier
             </button>
           </div>

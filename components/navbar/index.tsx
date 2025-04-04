@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { Menu, ShoppingCart } from "lucide-react"; // Icônes
 import { Cart } from "@/components/cart";
+import { useCartStore } from "@/stores/cartStore";
 import Link from "next/link";
 import { Search01Icon } from "hugeicons-react";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerBody,
-} from "@heroui/react";
+import { Drawer, DrawerContent, DrawerHeader, DrawerBody } from "@heroui/react";
 
 export const NavbarComponent: React.FC = () => {
   const [activeLink, setActiveLink] = useState("Accueil");
@@ -33,11 +29,19 @@ export const NavbarComponent: React.FC = () => {
     { label: "Contact", href: "/contact" },
   ];
 
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { totalItems } = useCartStore();
+
   return (
     <>
-      <nav className={`w-full z-50 flex px-8 md:px-16 py-2 items-center justify-between transition duration-300 ease-in
-        ${isSticky ? "fixed top-0 backdrop-blur-3xl" : "absolute top-0 bg-transparent"}`}>
-        
+      <nav
+        className={`w-full z-50 flex px-8 md:px-16 py-2 items-center justify-between transition duration-300 ease-in
+        ${
+          isSticky
+            ? "fixed top-0 backdrop-blur-3xl"
+            : "absolute top-0 bg-transparent"
+        }`}
+      >
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white"
@@ -86,13 +90,23 @@ export const NavbarComponent: React.FC = () => {
             onClick={() => setIsOpen(true)}
             className="relative transition hover:bg-violet-950 p-3 bg-violet-600 rounded-full"
           >
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 bg-white text-violet-500 text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {totalItems}
+              </span>
+            )}
             <ShoppingCart size={22} className="text-white transition" />
           </button>
         </div>
       </nav>
 
       {/* Mobile Drawer */}
-      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} radius="none">
+      <Drawer
+        isOpen={isDrawerOpen}
+        placement="left"
+        onClose={() => setIsDrawerOpen(false)}
+        radius="none"
+      >
         <DrawerContent>
           <DrawerHeader className="flex justify-between items-center">
             <span className="text-2xl font-bold">SNOB</span>
@@ -100,7 +114,7 @@ export const NavbarComponent: React.FC = () => {
               <X size={24} />
             </button> */}
           </DrawerHeader>
-          
+
           <DrawerBody>
             <div className="flex flex-col gap-6">
               <div className="relative">
@@ -118,7 +132,9 @@ export const NavbarComponent: React.FC = () => {
                     key={link.label}
                     href={link.href}
                     className={`text-lg font-medium ${
-                      pathname === link.href ? "text-violet-600" : "hover:text-violet-600"
+                      pathname === link.href
+                        ? "text-violet-600"
+                        : "hover:text-violet-600"
                     }`}
                     onClick={() => {
                       setActiveLink(link.label);
@@ -138,6 +154,5 @@ export const NavbarComponent: React.FC = () => {
     </>
   );
 };
-
 
 // export default NavbarComponent;

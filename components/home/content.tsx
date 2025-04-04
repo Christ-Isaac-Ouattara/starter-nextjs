@@ -10,7 +10,7 @@ export default function Content() {
   return (
     <>
       <Hero />
-      <div className="m-4 rounded-xl ">
+      <div className="m-4 p-4 rounded-xl bg-slate-700">
         <Offers />
         <RecentArrivals />
         <Testimonials />

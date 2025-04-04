@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className=" pt-1 text-white">
       {/* Promotion Banner */}
-      <div className="bg-violet-800 text-white py-16 px-4 md:px-8 m-4 rounded-xl">
+      <div className="bg-violet-800 text-white  px-4 md:px-8 m-4 rounded-xl">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <h2 className="text-3xl font-medium leading-tight">

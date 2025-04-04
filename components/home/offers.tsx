@@ -8,12 +8,12 @@ export const Offers: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 className="text-xl font-medium text-gray-200 mb-4">Nos offres</h3>
+            <h3 className="text-4xl font-medium text-violet-400 mb-4">Nos offres</h3>
             <div className="rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                src="/images/snob-personnalisé.jpg" 
                 alt="T-shirts collection" 
-                className="w-[70%] h-40 object-cover rounded-lg"
+                className="md:w-[70%] w-full md:h-64 object-top object-cover rounded-lg"
               />
             </div>
           </div>
