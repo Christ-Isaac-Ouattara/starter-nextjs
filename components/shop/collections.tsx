@@ -40,7 +40,7 @@ useEffect(() => {
       </div>
       <div className={`mt-8 sticky top-14 z-50 backdrop-blur-3xl `}>
         <div className="">
-          <div className="flex md:justify-center overflow-x-auto hide-scrollbar md:mx-16 mx-4 space-x-4">
+          <div className="flex justify-center overflow-x-auto hide-scrollbar md:mx-16 mx-4 space-x-4">
             {collections.map((collection) => (
               <Card
                 key={collection.id}
@@ -55,7 +55,7 @@ useEffect(() => {
                 onPress={() => onSelectCollection(collection.id)}
                 //style={{ width: '200px' }} // Taille fixe réduite
               >
-                <div className={`relative h-24 md:h-32 w-full`}>
+                <div className={`relative h-24 md:h-24 w-full`}>
                   {" "}
                   {/* Hauteur réduite */}
                   <Image

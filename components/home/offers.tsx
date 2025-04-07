@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import {CircleArrowUpRightIcon} from "hugeicons-react";
+import Link from 'next/link';
 
 export const Offers: React.FC = () => {
   return (
@@ -30,10 +31,10 @@ export const Offers: React.FC = () => {
             <p className="mb-6 text-gray-200 font-extralight text-4xl">
               Commandez votre style dès maintenant!
             </p>
-            <button className="inline-flex items-center bg-violet-600 text-gray-800 px-4 py-2 rounded-full hover:bg-violet-400 transition-colors">
+            <Link href={"/contact"} className="inline-flex items-center bg-violet-600 text-gray-800 px-4 py-2 rounded-full hover:bg-violet-400 transition-colors">
               <span className="mr-2">Passer commande</span>
               <CircleArrowUpRightIcon size={22} className='stroke-2' />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

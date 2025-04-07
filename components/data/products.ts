@@ -29,10 +29,10 @@ export const filters = [
 ];
 
 export const collections = [
-  { id: 'Essentials', name: 'Essentials', description:'Les basiques intemporels à avoir dans votre garde-robe', imageUrl: '/images/collection.jpg',itemCount: 18 },
-  { id: 'Summer2024', name: 'Été 2024', description:'Découvrez nos pièces légères et élégantes pour l\'été',imageUrl: '/images/collection.jpg',itemCount: 18 },
-  { id: 'Luxury', name: 'Luxe', description:'Des articles exclusifs pour les occasions spéciales',imageUrl: '/images/collection.jpg',itemCount: 18 },
-  { id: 'NewArrivals', name: 'Nouveauté', description:'Les dernières tendances à ne pas manquer',imageUrl: '/images/collection.jpg',itemCount: 18 },
+  { id: 'firstEdition', name: '1ère Edition', description:'Les basiques intemporels à avoir dans votre garde-robe', imageUrl: '/images/collection.jpg',itemCount: 18 },
+  { id: 'secondEdition', name: '2ème Edition', description:'Découvrez nos pièces élégantes pour toute occasions',imageUrl: '/images/collection.jpg',itemCount: 18 },
+  // { id: 'Luxury', name: 'Luxe', description:'Des articles exclusifs pour les occasions spéciales',imageUrl: '/images/collection.jpg',itemCount: 18 },
+  // { id: 'NewArrivals', name: 'Nouveauté', description:'Les dernières tendances à ne pas manquer',imageUrl: '/images/collection.jpg',itemCount: 18 },
 ];
 
 export const products: Product[] = [
@@ -40,7 +40,7 @@ export const products: Product[] = [
     id: '1',
     name: 'T-shirt snob',
     price: 7499,
-    collection: 'Essentials',
+    collection: 'firstEdition',
     image: [
       '/images/s-bl.png',
       '/images/s-be.png',
@@ -52,7 +52,7 @@ export const products: Product[] = [
     id: '2',
     name: 'T-Shirt snob délaver',
     price: 7499,
-    collection: 'Essentials',
+    collection: 'firstEdition',
     image: [
       '/images/s-nrc.png',
       '/images/s-nrc.png',
@@ -64,7 +64,7 @@ export const products: Product[] = [
     id: '3',
     name: 'Pull snob',
     price: 9999,
-    collection: 'Essentials',
+    collection: 'firstEdition',
     image: [
       '/images/hoodie-gris.png',
       '/images/hoodie-noire.png',
@@ -76,7 +76,7 @@ export const products: Product[] = [
     id: '4',
     name: 'Crop top snob',
     price: 3999,
-    collection: 'Essentials',
+    collection: 'firstEdition',
     image: [
       '/images/crop-top-blanc-porté-2.jpg',
       '/images/crop-top-blanc-porté.jpg',

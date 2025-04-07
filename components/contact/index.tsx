@@ -60,7 +60,9 @@ export const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Adresse</h3>
                   <p className="opacity-80">123 Avenue de la Paix</p>
-                  <p className="opacity-80">75001 Abidjan, Côte d&apos;Ivoire</p>
+                  <p className="opacity-80">
+                    75001 Abidjan, Côte d&apos;Ivoire
+                  </p>
                 </div>
 
                 <div>
@@ -286,7 +288,7 @@ export const Contact = () => {
             <div className="bg-white shadow-lg rounded-lg overflow-hidden h-80">
               {/* Remplacez l'URL par votre propre intégration Google Maps */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142047342344!2d2.3354330157606347!3d48.87456857928884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e38f817b573%3A0x48d69c30470e7aeb!2sGaleries%20Lafayette%20Paris%20Haussmann!5e0!3m2!1sfr!2sfr!4v1623252347656!5m2!1sfr!2sfr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254236.65415794295!2d-4.1444834556753785!3d5.348428099212515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan!5e0!3m2!1sfr!2sci!4v1744008018570!5m2!1sfr!2sci"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -327,7 +329,8 @@ export const Contact = () => {
                     aria-label="Où sont vos magasins ?"
                     title="Où sont vos magasins ?"
                   >
-                    Nous sommes pour le moment une boutique en ligne et nous ne possédons pas de magasins physiques.
+                    Nous sommes pour le moment une boutique en ligne et nous ne
+                    possédons pas de magasins physiques.
                   </AccordionItem>
                   <AccordionItem
                     key="4"
@@ -338,7 +341,6 @@ export const Contact = () => {
                     Orange, MTN, Moov, Wave.
                   </AccordionItem>
                 </Accordion>
-           
               </div>
             </div>
           </div>
