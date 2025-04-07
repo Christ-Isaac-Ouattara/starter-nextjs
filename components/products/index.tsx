@@ -17,7 +17,7 @@ export default function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState("Noir");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  
+
   const { addItem } = useCartStore();
 
   if (!product) {
@@ -41,10 +41,10 @@ export default function ProductDetail() {
       printNumber: product.printNumber,
       size: selectedSize,
       color: selectedColor,
-      quantity: quantity
+      quantity: quantity,
     });
-    
-    toast.success('Produit ajouté au panier');
+
+    toast.success("Produit ajouté au panier");
   };
 
   return (
@@ -74,15 +74,18 @@ export default function ProductDetail() {
               />
 
               {/* Navigation Arrows */}
-              <div className="absolute grid grid-cols-2 gap-8 top-3/4 md:left-[40%] left-[35%] -translate-y-1/2 backdrop-blur-xl rounded-full px-4 py-2">
+              {/* <div className="absolute grid grid-cols-2 gap-8 top-3/4 md:left-[40%] left-[35%] -translate-y-1/2 backdrop-blur-xl rounded-full px-4 py-2">
                 <div className="absolute rounded-full inset-0 bg-gradient-to-t from-[#1a1a1a]/20 to-transparent"></div>
-                <button
+                
+              </div> */}
+
+              {/* <button
                   onClick={() =>
                     setCurrentImageIndex((prev) =>
                       prev > 0 ? prev - 1 : product.image.length - 1
                     )
                   }
-                  className="z-20 p-1 hover:scale-125 transition-all duration-300"
+                  className="absolute rounded-full -translate-y-1/2 top-1/2 left-1/2 z-20 p-2 bg-white/50 backdrop-blur-3xl hover:scale-125 transition-all duration-300"
                 >
                   <ArrowLeft02Icon className="w-6 h-6 text-white hover:text-gray-700" />
                 </button>
@@ -92,11 +95,32 @@ export default function ProductDetail() {
                       prev < product.image.length - 1 ? prev + 1 : 0
                     )
                   }
-                  className="z-20 p-1 hover:scale-125 transition-all duration-300"
+                  className="absolute rounded-full -translate-y-1/2 top-1/2 right-1/2 z-20 p-2 bg-white/50 backdrop-blur-3xl hover:scale-125 transition-all duration-300"
                 >
                   <ArrowRight02Icon className="w-6 h-6 text-white hover:text-gray-700" />
-                </button>
-              </div>
+                </button> */}
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={() =>
+                  setCurrentImageIndex((prev) =>
+                    prev > 0 ? prev - 1 : product.image.length - 1
+                  )
+                }
+                className="absolute z-10 left-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white/80 rounded-full hover:bg-white transition-colors"
+              >
+                <ArrowLeft02Icon className="w-5 h-5 text-gray-700" />
+              </button>
+              <button
+                onClick={() =>
+                  setCurrentImageIndex((prev) =>
+                    prev < product.image.length - 1 ? prev + 1 : 0
+                  )
+                }
+                className="absolute z-10 right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white/80 rounded-full hover:bg-white transition-colors"
+              >
+                <ArrowRight02Icon className="w-5 h-5 text-gray-700" />
+              </button>
             </div>
 
             {/* Thumbnail Navigation */}
@@ -174,16 +198,16 @@ export default function ProductDetail() {
             <div className="mt-8">
               <h3 className="text-sm font-medium text-gray-200">QUANTITÉ</h3>
               <div className="flex items-center mt-2 border rounded-lg w-fit">
-                <button 
+                <button
                   className="px-4 py-2 text-gray-400 hover:text-violet-500"
-                  onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                 >
                   -
                 </button>
                 <span className="px-4 py-2 text-gray-200">{quantity}</span>
-                <button 
+                <button
                   className="px-4 py-2 text-gray-400 hover:text-violet-500"
-                  onClick={() => setQuantity(prev => prev + 1)}
+                  onClick={() => setQuantity((prev) => prev + 1)}
                 >
                   +
                 </button>
@@ -192,13 +216,11 @@ export default function ProductDetail() {
 
             {/* Product Description */}
             <div className="mt-8">
-              <p className="text-gray-200">
-              {product.description}
-              </p>
+              <p className="text-gray-200">{product.description}</p>
             </div>
 
             {/* Add to Cart Button */}
-            <button 
+            <button
               onClick={handleAddToCart}
               className="mt-8 w-full bg-violet-500 text-white py-4 px-8 rounded-xl font-medium hover:bg-violet-600 transition-colors"
             >
