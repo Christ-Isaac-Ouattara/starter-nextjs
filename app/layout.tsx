@@ -20,7 +20,7 @@ export default function RootLayout({
         <link rel="preload" href={fontSans.style.fontFamily} as="font" />
       </head>
       <body className={clsx("min-h-screen  bg-slate-800 font-sans antialiased", fontSans.variable, geistMono.variable, geistSans.variable)}>
-        <Providers themeProps={{ attribute: "class", defaultTheme: "system" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           {children}
         </Providers>
       </body>

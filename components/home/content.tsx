@@ -5,6 +5,7 @@ import { RecentArrivals } from "./recentArrivals";
 import { Offers } from "./offers";
 import { Testimonials } from "./testimonial";
 import { Footer } from "./footer";
+import Collections from "./collections";
 
 export default function Content() {
   return (
@@ -13,7 +14,8 @@ export default function Content() {
       <div className="m-4 p-4 rounded-xl bg-slate-700">
         <Offers />
         <RecentArrivals />
-        <Testimonials />
+        <Collections />
+        {/* <Testimonials /> */}
       </div>
       <Footer />
     </>

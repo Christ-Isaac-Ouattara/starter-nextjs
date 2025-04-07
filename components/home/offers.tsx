@@ -6,14 +6,21 @@ export const Offers: React.FC = () => {
   return (
     <section className="py-12 px-4 md:px-8 ">
       <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-12">
+          <h2 className="text-3xl text-violet-500 md:text-4xl font-bold mb-4">
+            Offres personnalisées
+          </h2>
+          <p className="text-gray-200 max-w-2xl mx-auto">
+            Découvrez nos offres spéciales pour des vêtements personnalisés.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 className="text-4xl font-medium text-violet-400 mb-4">Nos offres</h3>
             <div className="rounded-lg overflow-hidden">
               <img 
                 src="/images/snob-personnalisé.jpg" 
                 alt="T-shirts collection" 
-                className="md:w-[70%] w-full md:h-64 object-top object-cover rounded-lg"
+                className="md:w-[80%] w-full md:h-72 object-top object-cover rounded-lg"
               />
             </div>
           </div>
