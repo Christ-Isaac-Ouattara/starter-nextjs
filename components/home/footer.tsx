@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
         </div>
         
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-gray-200 text-center text-gray-100 text-sm">
           <p>Copyright © SNOB. All Rights Reserved.</p>
         </div>
       </div>

@@ -72,7 +72,7 @@ export const NavbarComponent: React.FC = () => {
 
         {/* Logo */}
         <div className="text-4xl flex justify-center font-bold tracking-wide text-gray-800">
-          <span className="text-violet-800 logo-text">SNOB</span>
+          <Link href={"/"} className="text-violet-800 logo-text">SNOB</Link>
         </div>
 
         {/* Search and Cart */}
@@ -109,7 +109,7 @@ export const NavbarComponent: React.FC = () => {
       >
         <DrawerContent>
           <DrawerHeader className="flex justify-between items-center">
-            <span className="text-2xl font-bold">SNOB</span>
+            <Link href={"/"} className="text-2xl font-bold">SNOB</Link>
             {/* <button onClick={() => setIsDrawerOpen(false)}>
               <X size={24} />
             </button> */}

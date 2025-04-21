@@ -65,7 +65,7 @@ const Collections = () => {
             href={"/shop"}
             className=" inline-flex items-center bg-violet-600 text-gray-800 px-4 py-2 rounded-full hover:bg-violet-400 transition-colors"
           >
-            <span className="mr-2">Voir toutes les collections</span>
+            <span className="mr-2">Voir toutes les éditions</span>
             <CircleArrowUpRightIcon size={22} className="stroke-2" />
           </Link>
         </div>

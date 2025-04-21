@@ -1,7 +1,7 @@
-import Home from "@/components/home/content"
+import { CheckoutComponent } from "@/components/checkout";
 
-const home = () =>{
-  return <Home/>;
+const checkout = () =>{
+  return <CheckoutComponent/>;
 }
 
-export default home;
+export default checkout;

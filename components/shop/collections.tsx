@@ -38,7 +38,7 @@ useEffect(() => {
           </Button>
         )}
       </div>
-      <div className={`mt-8 sticky top-14 z-50 backdrop-blur-3xl `}>
+      <div className={`mt-8 sticky md:relative top-14 md:top-0 z-50 md:z-10 backdrop-blur-3xl `}>
         <div className="">
           <div className="flex justify-center overflow-x-auto hide-scrollbar md:mx-16 mx-4 space-x-4">
             {collections.map((collection) => (
