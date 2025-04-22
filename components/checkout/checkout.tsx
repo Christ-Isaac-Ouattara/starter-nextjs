@@ -45,10 +45,8 @@ export const CheckoutComponent: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setError("");
-
+  
     try {
-      // Ici, vous implémenteriez l'appel API pour traiter la commande
-      // Par exemple:
       const orderData = {
         customer: {
           fullName: formData.fullName,
@@ -74,12 +72,20 @@ export const CheckoutComponent: React.FC = () => {
         })),
         totalAmount: totalPrice,
       };
-
-      // Simuler un appel API
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Ici, vous enverriez un email à l'administrateur et au client
-      // Exemple: await sendOrderConfirmationEmails(orderData);
+  
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+      });
+  
+      const data = await response.json();
+  
+      if (!data.success) {
+        throw new Error(data.message || 'Une erreur est survenue');
+      }
       
       setSuccess(true);
       clearCart();
@@ -87,7 +93,7 @@ export const CheckoutComponent: React.FC = () => {
       // Rediriger vers une page de confirmation après quelques secondes
       setTimeout(() => {
         router.push("/order-confirmation");
-      }, 1500);
+      }, 3000);
       
     } catch (err) {
       console.error("Erreur lors du traitement de la commande:", err);
@@ -96,22 +102,7 @@ export const CheckoutComponent: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  if (success) {
-    return (
-      <div className="max-w-4xl mx-auto my-16 px-4">
-        <div className="bg-violet-100 p-8 rounded-xl text-center">
-          <h2 className="text-2xl font-bold text-violet-800 mb-4">Commande confirmée!</h2>
-          <p className="mb-4 text-gray-700">
-            Merci pour votre commande. Un email de confirmation a été envoyé à {formData.email}.
-          </p>
-          <p className="text-gray-700">
-            Vous serez redirigé vers la page de confirmation dans quelques instants...
-          </p>
-        </div>
-      </div>
-    );
-  }
+  
 
   return (
     <div className="max-w-6xl mx-auto mt-24 my-12 px-4">
@@ -132,15 +123,15 @@ export const CheckoutComponent: React.FC = () => {
               <h2 className="text-xl font-semibold text-gray-200 mb-6">Informations de livraison</h2>
               
               <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-1 gap-4 mb-6">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-1">
                       Nom complet *
                     </label>
                     <input
                       type="text"
-                      id="firstName"
-                      name="firstName"
+                      id="fullName"
+                      name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
                       required
@@ -236,7 +227,7 @@ export const CheckoutComponent: React.FC = () => {
                         onChange={handleInputChange}
                         className="h-5 w-5 text-violet-500"
                       />
-                      <span className="text-gray-200">Mobile Money (Orange, MTN, Moov)</span>
+                      <span className="text-gray-200">Mobile Money (Orange, MTN, Moov, Wave)</span>
                     </label>
                     
                     {/* <label className="flex items-center space-x-3 p-4 border border-violet-400 rounded-lg cursor-pointer hover:bg-violet-800 hover:bg-opacity-30 transition-colors">

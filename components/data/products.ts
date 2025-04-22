@@ -29,10 +29,10 @@ export const filters = [
 ];
 
 export const collections = [
-  { id: 'firstEdition', name: '1ère Edition', description:'Les basiques intemporels à avoir dans votre garde-robe', imageUrl: '/images/collection.jpg',itemCount: 18 },
-  { id: 'secondEdition', name: '2ème Edition', description:'Découvrez nos pièces élégantes pour toute occasions',imageUrl: '/images/collection.jpg',itemCount: 18 },
-  // { id: 'Luxury', name: 'Luxe', description:'Des articles exclusifs pour les occasions spéciales',imageUrl: '/images/collection.jpg',itemCount: 18 },
-  // { id: 'NewArrivals', name: 'Nouveauté', description:'Les dernières tendances à ne pas manquer',imageUrl: '/images/collection.jpg',itemCount: 18 },
+  { id: 'firstEdition', name: '1ère Collection', description:'Les basiques intemporels à avoir dans votre garde-robe', imageUrl: '/images/collection1/t-shirts-porté-6.png',itemCount: 4 },
+  { id: 'secondEdition', name: '2ème Collection', description:'Découvrez nos pièces élégantes pour toute occasions',imageUrl: '/images/collection2/collection-3.jpg',itemCount: 3 },
+  // { id: 'Luxury', name: 'Luxe', description:'Des articles exclusifs pour les occasions spéciales',imageUrl: '/images/collection1/collection.jpg',itemCount: 18 },
+  // { id: 'NewArrivals', name: 'Nouveauté', description:'Les dernières tendances à ne pas manquer',imageUrl: '/images/collection1/collection.jpg',itemCount: 18 },
 ];
 
 export const products: Product[] = [
@@ -42,9 +42,11 @@ export const products: Product[] = [
     price: 7499,
     collection: 'firstEdition',
     image: [
-      '/images/s-bl.png',
-      '/images/s-be.png',
-      '/images/complet-t-shirt-gris.png',
+      '/images/collection1/t-shirt-blanc.png',
+      '/images/collection1/t-shirt-beige.png',
+      '/images/collection1/t-shirt-rose.png',
+      '/images/collection1/t-shirt-noire.png',
+      '/images/collection1/t-shirt-noir-porté.jpg',
     ],
     description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
@@ -54,9 +56,9 @@ export const products: Product[] = [
     price: 7499,
     collection: 'firstEdition',
     image: [
-      '/images/s-nrc.png',
-      '/images/s-nrc.png',
-      '/images/s-nrc.png',
+      '/images/collection1/t-shirt-noir-delaver.png',
+      '/images/collection1/t-shirt-delaver-porté-4.jpg',
+      '/images/collection1/t-shirts-porté-5.jpg',
     ],
     description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
@@ -66,9 +68,8 @@ export const products: Product[] = [
     price: 9999,
     collection: 'firstEdition',
     image: [
-      '/images/hoodie-gris.png',
-      '/images/hoodie-noire.png',
-      '/images/complet-hoodie-noire.png',
+      '/images/collection1/hoodie-noire-sans-fond.png',
+      '/images/collection1/hoodie-blanc-sans-fond.png',
     ],
     description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
@@ -78,11 +79,52 @@ export const products: Product[] = [
     price: 3999,
     collection: 'firstEdition',
     image: [
-      '/images/crop-top-blanc-porté-2.jpg',
-      '/images/crop-top-blanc-porté.jpg',
-      '/images/crop.jpg',
+      '/images/collection1/crop-porté-2.jpg',
+      '/images/collection1/crop-porté-1.jpg',
     ],
     description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
   },
+  {
+    id: '5',
+    name: 'T-shirt snob',
+    price: 7499,
+    collection: 'secondEdition',
+    image: [
+      '/images/collection2/complet-t-shirt-gris-sans-fond.png',
+      '/images/collection2/t-shirt-beige.jpg',
+      '/images/collection2/back-t-shirt-beige.jpg',
+      '/images/collection2/t-shirt-bleu-ciel.jpg',
+      '/images/collection2/t-shirt-marron.jpg',
+      '/images/collection2/t-shirt-rose-porté.jpg',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
+  },
+  {
+    id: '6',
+    name: 'Pull snob',
+    price: 9999,
+    collection: 'secondEdition',
+    image: [
+      '/images/collection2/complet-hoodie-noire-sans-fond.png',
+      '/images/collection2/hoodie-gris-sans-fond.png',
+      '/images/collection2/hoodie-noire-sans-fond.png',
+      '/images/collection2/hoodie-beige-sans-fond.png',
+      '/images/collection2/hoodie-blanc-sans-fond.png',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
+  },
+  {
+    id: '7',
+    name: 'Crop top snob',
+    price: 3999,
+    collection: 'secondEdition',
+    image: [
+      '/images/collection2/crop-top-blanc-porté.jpg',
+      '/images/collection2/crop-top-blanc-porté-2.jpg',
+      '/images/collection2/crop-top-noire-porté.jpg',
+    ],
+    description: 'Simple mais percutant, il arbore un logo imposant sur la hanche droite, inspiré des graffitis urbains. Fabriqué en coton épais, ce T-shirt est parfait pour un look épuré.'
+  },
+
   
 ];

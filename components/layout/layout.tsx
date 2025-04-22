@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { NavbarComponent } from "@/components/navbar";
+import { NavbarComponent } from "@/components/navbar/navbar";
 interface Props {
   children: React.ReactNode;
 }

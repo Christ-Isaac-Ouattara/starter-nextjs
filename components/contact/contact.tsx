@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Footer } from "../footer";
+import { Footer } from "../footer/footer";
 import { Accordion, AccordionItem } from "@heroui/react";
 
 export const Contact = () => {

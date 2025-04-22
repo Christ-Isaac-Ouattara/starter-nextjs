@@ -3,6 +3,8 @@ import { ShoppingCart } from "lucide-react";
 import { products } from "../data/products";
 import Link from "next/link";
 
+const newProducts = products.filter((product) => product.collection === "secondEdition");
+
 export const RecentArrivals: React.FC = () => {
   return (
     <section className="py-12 px-4 md:px-8 rounded-xl ">
@@ -17,7 +19,7 @@ export const RecentArrivals: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product, index) => (
+          {newProducts.slice(0,4).map((product, index) => (
             <Link
               href={`/products/${product.id}`}
               key={product.id}

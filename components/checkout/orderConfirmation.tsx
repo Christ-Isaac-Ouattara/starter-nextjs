@@ -45,14 +45,14 @@ export default function OrderConfirmation() {
           <Button 
             color="primary" 
             variant="light"
-            onClick={() => router.push("/shop")}
+            onPress={() => router.push("/shop")}
             className="px-6 py-2"
           >
             Continuer vos achats
           </Button>
           <Button 
             color="primary"
-            onClick={() => router.push("/")}
+            onPress={() => router.push("/")}
             className="px-6 py-2"
           >
             Retour à l&apos;accueil

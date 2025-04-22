@@ -1,4 +1,4 @@
-import {Contact} from "@/components/contact/index"
+import {Contact} from "@/components/contact/contact"
 
 const contact = () =>{
   return <Contact/>;

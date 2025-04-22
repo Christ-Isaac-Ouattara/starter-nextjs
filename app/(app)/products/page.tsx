@@ -1,8 +1,8 @@
-import ProductDetail from '@/components/products';
+import ProductDetail from "@/components/products/products";
 
-const products = () =>{
-  return <ProductDetail/>;
-}
+const products = () => {
+  return <ProductDetail />;
+};
 
 export default products;
 
@@ -18,11 +18,10 @@ export default products;
 
 // export default function Page({ params }: { params: { id: string } }) {
 //   const product = products.find(p => p.id === params.id);
-  
+
 //   if (!product) {
 //     return <div>Product not found</div>;
 //   }
 
 //   return <ProductDetails product={product} />;
 // }
-

@@ -38,15 +38,15 @@ const Collections = () => {
                       </span>
                     )}
                   </div>
-                  <div className="p-2 rounded-xl absolute bottom-1 m-2 bg-white">
-                    <h3 className="font-bold text-lg text-violet-300">
+                  <div className="p-2 rounded-xl absolute bottom-1 m-2 bg-white/35 backdrop-blur-lg">
+                    <h3 className="font-bold text-lg text-violet-900">
                       {collection.name}
                     </h3>
-                    <p className="text-gray-600 mb-1 text-xs">
+                    <p className="text-white font-extralight mb-1 text-xs">
                       {collection.description}
                     </p>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-gray-800">
                         {collection.itemCount} articles
                       </span>
                       {/* <span className="text-sm font-medium text-indigo-600">
@@ -65,7 +65,7 @@ const Collections = () => {
             href={"/shop"}
             className=" inline-flex items-center bg-violet-600 text-gray-800 px-4 py-2 rounded-full hover:bg-violet-400 transition-colors"
           >
-            <span className="mr-2">Voir toutes les éditions</span>
+            <span className="mr-2">Voir toutes les collections</span>
             <CircleArrowUpRightIcon size={22} className="stroke-2" />
           </Link>
         </div>

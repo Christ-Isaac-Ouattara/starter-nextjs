@@ -1,4 +1,4 @@
-import {Shop} from "@/components/shop"
+import {Shop} from "@/components/shop/shop"
 
 const shop = () =>{
   return <Shop/>;

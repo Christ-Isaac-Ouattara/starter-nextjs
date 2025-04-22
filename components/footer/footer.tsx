@@ -1,10 +1,24 @@
+import { ArrowDown01Icon, ArrowUp01Icon } from 'hugeicons-react';
+import { ArrowDown01 } from 'lucide-react';
 import React from 'react';
 
 export const Footer: React.FC = () => {
+  const [isUnrolled, setIsUnrolled] = React.useState(false);
+  const handleUnroll = () => {
+    setIsUnrolled(!isUnrolled);
+  };
   return (
-    <footer className=" pt-1 m-4 bg-violet-800 rounded-xl text-white  rounded-t-xl mt-16">      
+    <footer className={` m-4 h-16 overflow-hidden transition-all duration-300 ease-in-out bg-violet-950 rounded-xl text-white  rounded-t-xl mt-16 ${isUnrolled ? "h-auto" : "h-16"} `}>      
       {/* Footer Content */}
-      <div className="py-12 px-4 md:px-8 ">
+
+      {/** unroll button */}
+      <div className="absolute m-3 right-4 flex justify-center items-center">
+        <button onClick={handleUnroll} className="bg-violet-500 hover:bg-violet-600 text-white font-bold p-2 rounded-full">
+          {isUnrolled ? <ArrowDown01Icon size={20} /> : <ArrowUp01Icon size={20} />}
+          
+        </button>
+      </div>
+      <div className="py-4 px-4 md:px-8 ">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div>

@@ -35,7 +35,7 @@ export const NavbarComponent: React.FC = () => {
   return (
     <>
       <nav
-        className={`w-full z-50 flex px-8 md:px-16 py-2 items-center justify-between transition duration-300 ease-in
+        className={`w-full z-50 grid grid-cols-3 px-8 md:px-16 py-2 items-center justify-between transition duration-300 ease-in
         ${
           isSticky
             ? "fixed top-0 backdrop-blur-3xl"
@@ -77,14 +77,14 @@ export const NavbarComponent: React.FC = () => {
 
         {/* Search and Cart */}
         <div className="flex justify-end">
-          <div className="flex-1 relative">
+          {/* <div className="flex-1 relative">
             <input
               type="text"
               placeholder="Rechercher..."
               className="hidden md:block mt-[3px] md:w-64 md:h-10 md:rounded-full md:border-2 md:border-gray-300 md:pl-10 md:pr-10 md:text-sm md:leading-5 md:placeholder-gray-500 md:focus:border-violet-500 md:focus:ring-1 md:focus:ring-violet-500 md:focus:outline-none"
             />
             <Search01Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-          </div>
+          </div> */}
 
           <button
             onClick={() => setIsOpen(true)}
@@ -117,14 +117,14 @@ export const NavbarComponent: React.FC = () => {
 
           <DrawerBody>
             <div className="flex flex-col gap-6">
-              <div className="relative">
+              {/* <div className="relative">
                 <input
                   type="text"
                   placeholder="Rechercher..."
                   className="w-full h-10 rounded-full border-2 border-gray-300 pl-10 pr-10 text-sm"
                 />
                 <Search01Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              </div>
+              </div> */}
 
               <div className="flex flex-col gap-4">
                 {menuItems.map((link) => (

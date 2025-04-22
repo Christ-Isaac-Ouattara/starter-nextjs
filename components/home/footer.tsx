@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
       </div> */}
       
       {/* Footer Content */}
-      <div className="py-12 m-4 bg-violet-800 rounded-xl px-4 md:px-8 ">
+      <div className="py-12 m-4 bg-violet-950 rounded-xl px-4 md:px-8 ">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div>
