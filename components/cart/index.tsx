@@ -59,7 +59,7 @@ export const Cart = ({ isOpen, onCartClose }: CartProps) => {
                       >
                         <div className="w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                           <img
-                            src={item.image[0]}
+                            src={item.image}
                             alt={item.name}
                             className="w-full h-full object-cover"
                           />

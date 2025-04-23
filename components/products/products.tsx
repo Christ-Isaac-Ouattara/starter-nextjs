@@ -36,9 +36,8 @@ export default function ProductDetail() {
     addItem({
       id: product.id,
       name: product.name,
-      image: product.image,
+      image: product.image[0],
       price: product.price,
-      printNumber: product.printNumber,
       size: selectedSize,
       color: selectedColor,
       quantity: quantity,
@@ -156,7 +155,7 @@ export default function ProductDetail() {
 
             {/* Color Selection */}
             <div className="mt-8 ">
-              <h3 className="text-sm font-medium text-gray-200">COLOR</h3>
+              <h3 className="text-sm font-medium text-gray-200">COULEURS</h3>
               <div className="flex flex-wrap gap-3 mt-2">
                 {colors.map((color) => (
                   <button
@@ -176,7 +175,7 @@ export default function ProductDetail() {
 
             {/* Size Selection */}
             <div className="mt-8 ">
-              <h3 className="text-sm font-medium text-gray-200">SIZE</h3>
+              <h3 className="text-sm font-medium text-gray-200">TAILLE</h3>
               <div className="flex flex-wrap gap-2 mt-2">
                 {sizes.map((size) => (
                   <button

@@ -38,7 +38,7 @@ export const collections = [
 export const products: Product[] = [
   {
     id: '1',
-    name: 'T-shirt snob',
+    name: 'T-shirt snob (prémière collection)',
     price: 7499,
     collection: 'firstEdition',
     image: [
@@ -52,7 +52,7 @@ export const products: Product[] = [
   },
   {
     id: '2',
-    name: 'T-Shirt snob délaver',
+    name: 'T-Shirt snob délaver (prémière collection)',
     price: 7499,
     collection: 'firstEdition',
     image: [
@@ -64,7 +64,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'Pull snob',
+    name: 'Pull snob (prémière collection)',
     price: 9999,
     collection: 'firstEdition',
     image: [
@@ -75,7 +75,7 @@ export const products: Product[] = [
   },
   {
     id: '4',
-    name: 'Crop top snob',
+    name: 'Crop top snob (prémière collection)',
     price: 3999,
     collection: 'firstEdition',
     image: [
@@ -86,7 +86,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    name: 'T-shirt snob',
+    name: 'T-shirt snob (deuxième collection)',
     price: 7499,
     collection: 'secondEdition',
     image: [
@@ -101,7 +101,7 @@ export const products: Product[] = [
   },
   {
     id: '6',
-    name: 'Pull snob',
+    name: 'Pull snob (deuxième collection)',
     price: 9999,
     collection: 'secondEdition',
     image: [
@@ -115,7 +115,7 @@ export const products: Product[] = [
   },
   {
     id: '7',
-    name: 'Crop top snob',
+    name: 'Crop top snob (deuxième collection)',
     price: 3999,
     collection: 'secondEdition',
     image: [

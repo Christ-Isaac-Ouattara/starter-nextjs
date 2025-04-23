@@ -24,6 +24,7 @@ interface OrderData {
     size: string;
     color: string;
     printNumber?: string;
+    image?: string;
   }>;
   totalAmount: number;
 }
@@ -65,5 +66,4 @@ export async function sendOrderConfirmationEmails(orderData: OrderData) {
     console.error('Erreur lors de l\'envoi des emails:', error);
     return { success: false, error };
   }
-
 }
