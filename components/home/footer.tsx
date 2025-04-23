@@ -1,89 +1,205 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { Instagram, Facebook, Twitter, Send, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className=" pt-1 text-white">
-      {/* Promotion Banner */}
-      {/* <div className="bg-violet-800 text-white  px-4 md:px-8 m-4 rounded-xl">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0">
-            <h2 className="text-3xl font-medium leading-tight">
-              Do you want a <span className="font-bold">hoodie</span> with an<br />
-              excellent print for a great<br />
-              <span className="font-bold">discount?</span>
-            </h2>
-            <button className="mt-6 bg-white text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors">
-              Explore More
-            </button>
+    <footer className="relative overflow-hidden pt-16 pb-6 bg-gradient-to-b from-gray-900 to-black">
+      {/* Éléments décoratifs */}
+      <div className="absolute -top-40 -left-40 w-80 h-80 bg-violet-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-fuchsia-600/10 rounded-full blur-3xl"></div>
+      
+      {/* Bannière promotionnelle */}
+      <div className="max-w-7xl mx-auto px-4 mb-16">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-violet-800 to-fuchsia-700">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grid)" />
+            </svg>
+            <defs>
+              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5" />
+              </pattern>
+            </defs>
           </div>
-          <div className="relative">
-            <img 
-              src="/images/model-shirt.png" 
-              alt="Hoodie with print" 
-              className="w-64 h-64 object-cover "
-            />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 rounded-full w-32 h-32 flex flex-col items-center justify-center">
-              <span className="text-3xl font-bold text-gray-800">60%</span>
-              <span className="text-xl font-medium text-gray-800 flex items-center">OFF <ArrowRight size={20} /></span>
+          
+          <div className="relative z-10 flex flex-col md:flex-row justify-between items-center p-8 md:p-12">
+            <div className="mb-8 md:mb-0 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+                Rejoignez la communauté <span className="text-violet-200">SNOB</span> <br />
+                et obtenez <span className="text-violet-200">15% de réduction</span>
+              </h2>
+              <p className="text-white/80 max-w-md">
+                Inscrivez-vous à notre newsletter pour recevoir des offres exclusives, 
+                des mises à jour sur les nouvelles collections et des invitations à nos événements.
+              </p>
+            </div>
+            
+            <div className="w-full md:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="relative">
+                  <input 
+                    type="email" 
+                    placeholder="Votre adresse email" 
+                    className="w-full sm:w-80 px-6 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                  />
+                </div>
+                <button className="px-6 py-4 rounded-full bg-white text-violet-900 font-medium hover:bg-violet-100 transition-colors flex items-center justify-center">
+                  S&apos;inscrire <Send size={16} className="ml-2" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       
-      {/* Footer Content */}
-      <div className="py-12 m-4 bg-violet-950 rounded-xl px-4 md:px-8 ">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Info */}
+      {/* Contenu principal du footer */}
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Informations de la marque */}
           <div>
-            <div className="mb-4">
-              <h2 className="text-2xl font-bold tracking-tighter">SNOB</h2>
+            <div className="mb-6">
+              <h2 className="text-3xl font-bold text-white">SNOB</h2>
+              <p className="text-violet-300 text-sm mt-1">Style. Nouveauté. Originalité. Beauté.</p>
             </div>
-            <p className="text-gray-400 mb-2">Côte d&apos;Ivoire</p>
-            <p className="text-gray-400 mb-2">Abidjan, Cocody </p>
-            <p className="text-gray-400 mb-2">info@snob.com</p>
-            <p className="text-gray-400">+225 00 00 00 00 00</p>
+            <p className="text-gray-400 mb-6">
+              SNOB est une marque de vêtements ivoirienne qui célèbre l&apos;individualité et l&apos;expression personnelle à travers des designs uniques et des matériaux de qualité.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center text-gray-400">
+                <MapPin size={16} className="mr-3 text-violet-400" />
+                <span>Abidjan, Cocody, Côte d&apos;Ivoire</span>
+              </div>
+              <div className="flex items-center text-gray-400">
+                <Phone size={16} className="mr-3 text-violet-400" />
+                <span>+225 07 07 07 07 07</span>
+              </div>
+              <div className="flex items-center text-gray-400">
+                <Mail size={16} className="mr-3 text-violet-400" />
+                <span>contact@snob-style.com</span>
+              </div>
+            </div>
           </div>
           
-          {/* Menu */}
+          {/* Liens rapides */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Menu</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Accueil</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Boutique</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">A propos</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Contact</a></li>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <span className="w-8 h-[2px] bg-violet-500 mr-3"></span>
+              Navigation
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Boutique
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  À propos
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
           
-          {/* Quick Links */}
+          {/* Collections */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Liens rapides</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Panier</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Wishlist</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Compte</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Politique de confidentialité</a></li>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <span className="w-8 h-[2px] bg-violet-500 mr-3"></span>
+              Collections
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/shop" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Première Édition
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Seconde Édition
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Édition Limitée
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="text-gray-400 hover:text-violet-300 transition-colors flex items-center">
+                  <ArrowRight size={14} className="mr-2 text-violet-500" />
+                  Personnalisation
+                </Link>
+              </li>
             </ul>
           </div>
           
-          {/* Social Links */}
+          {/* Réseaux sociaux */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Réseaux sociaux</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Instagram</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">Facebook</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gray-900">WhatsApp</a></li>
-            </ul>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <span className="w-8 h-[2px] bg-violet-500 mr-3"></span>
+              Suivez-nous
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Rejoignez notre communauté sur les réseaux sociaux pour découvrir nos dernières créations et partager votre style SNOB.
+            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-violet-900/50 flex items-center justify-center text-white hover:bg-violet-600 transition-colors"
+              >
+                <Instagram size={18} />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-violet-900/50 flex items-center justify-center text-white hover:bg-violet-600 transition-colors"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-violet-900/50 flex items-center justify-center text-white hover:bg-violet-600 transition-colors"
+              >
+                <Twitter size={18} />
+              </a>
+            </div>
           </div>
         </div>
         
+        {/* Séparateur */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-6"></div>
+        
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200 text-center text-gray-100 text-sm">
-          <p>Copyright © SNOB. All Rights Reserved.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm py-6">
+          <p>© {new Date().getFullYear()} SNOB. Tous droits réservés.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link href="/privacy" className="hover:text-violet-300 transition-colors">Politique de confidentialité</Link>
+            <Link href="/terms" className="hover:text-violet-300 transition-colors">Conditions d&apos;utilisation</Link>
+            <Link href="/shipping" className="hover:text-violet-300 transition-colors">Livraison</Link>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
-

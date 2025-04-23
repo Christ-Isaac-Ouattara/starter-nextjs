@@ -26,19 +26,29 @@ useEffect(() => {
 }, []);
   return (
     <>
-      <div className="flex flex-col justify-between items-center mb-4 mx-16">
-        <h2 className="text-2xl text-white font-bold">Nos Collections</h2>
-        {selectedCollection && (
-          <Button
-            onPress={() => onSelectCollection(null)}
-            className="text-sm mt-4 text-violet-600 bg-transparent"
-            variant="light"
-          >
-            Afficher toutes les collections
-          </Button>
-        )}
+    <div className="pt-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col justify-between items-center ">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-500 text-transparent bg-clip-text mb-4">
+            Nos Collections
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-center text-base mb-4">
+            Découvrez nos collections de vêtements uniques, conçus pour exprimer votre style avec élégance et originalité.
+          </p>
+          {selectedCollection && (
+            <Button
+              onPress={() => onSelectCollection(null)}
+              className="text-sm text-violet-400 bg-violet-900/30 hover:bg-violet-900/50"
+              variant="flat"
+              radius="full"
+              size="sm"
+            >
+              Afficher toutes les collections
+            </Button>
+          )}
+        </div>
       </div>
-      <div className={`mt-8 sticky md:relative top-14 md:top-0 z-50 md:z-10 backdrop-blur-3xl `}>
+      <div className={` sticky md:relative top-14 md:top-0 z-50 md:z-10 backdrop-blur-3xl `}>
         <div className="">
           <div className="flex justify-center overflow-x-auto hide-scrollbar md:mx-16 mx-4 space-x-4">
             {collections.map((collection) => (
@@ -88,6 +98,8 @@ useEffect(() => {
           }
         `}</style>
       </div>
+    </div>
+      
     </>
   );
 };
