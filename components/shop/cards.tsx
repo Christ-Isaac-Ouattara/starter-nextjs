@@ -64,7 +64,7 @@ export const Card: React.FC<CardProps> = ({
                     </div>
 
                     {/* Overlay avec actions */}
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    {/* <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="flex gap-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         <button
                           onClick={() => {
@@ -77,11 +77,11 @@ export const Card: React.FC<CardProps> = ({
                         <button className="bg-white text-gray-900 p-3 rounded-full hover:bg-violet-500 hover:text-white transition-colors">
                           <ShoppingCart size={18} />
                         </button>
-                        {/* <button className="bg-white text-gray-900 p-3 rounded-full hover:bg-violet-500 hover:text-white transition-colors">
+                        <button className="bg-white text-gray-900 p-3 rounded-full hover:bg-violet-500 hover:text-white transition-colors">
                           <Heart size={18} />
-                        </button> */}
+                        </button>
                       </div>
-                    </div>
+                    </div> */}
                   </Link>
 
                   {/* Badges */}
@@ -97,11 +97,9 @@ export const Card: React.FC<CardProps> = ({
 
                 {/* Informations produit */}
                 <div className="p-4 flex flex-col justify-between h-auto">
-                  <Link href={`/products/${product.id}`}>
-                    <h3 className="text-lg font-medium text-white group-hover:text-violet-300 transition-colors">
+                <h3 className="text-lg font-medium text-white group-hover:text-violet-300 transition-colors">
                       {product.name}
                     </h3>
-                  </Link>
 
                   <div className="mt-2 flex justify-between items-center">
                     <div>

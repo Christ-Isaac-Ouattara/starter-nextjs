@@ -3,6 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@heroui/react";
+import { CheckCircleIcon } from "lucide-react";
 
 export default function OrderConfirmation() {
   const router = useRouter();
@@ -11,9 +12,8 @@ export default function OrderConfirmation() {
     <div className="max-w-4xl mx-auto my-16 px-4">
       <div className="bg-violet-800 bg-opacity-20 p-8 rounded-xl text-center">
         <div className="w-20 h-20 bg-violet-500 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
+        
+          <CheckCircleIcon className="h-10 w-10 text-white" />
         </div>
         
         <h1 className="text-3xl font-bold text-violet-400 mb-4">Commande confirmée!</h1>

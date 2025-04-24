@@ -51,9 +51,8 @@ export default function ProductDetail() {
           className="text-center p-8 rounded-2xl bg-gray-800/50 backdrop-blur-sm max-w-md"
         >
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-700 flex items-center justify-center">
-            <svg className="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            
+            <img src="/images/logo.png" alt="Logo" className="w-60 h-30" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-4">Produit introuvable</h1>
           <p className="text-gray-300 mb-6">
@@ -105,11 +104,11 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 pt-16 ">
       {/* Éléments décoratifs */}
-      <div className="absolute -top-20 -left-20 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-fuchsia-600/10 rounded-full blur-3xl"></div>
+      {/* <div className="absolute -top-20 -left-20 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 right-0 w-64 h-64 bg-fuchsia-600/10 rounded-full blur-3xl"></div> */}
       
       {/* Fil d'Ariane */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="max-w-7xl mx-auto px-4 pb-4 pt-10">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

@@ -12,15 +12,8 @@ export const Footer: React.FC = () => {
       {/* Bannière promotionnelle */}
       <div className="max-w-7xl mx-auto px-4 mb-16">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-violet-800 to-fuchsia-700">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grid)" />
-            </svg>
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5" />
-              </pattern>
-            </defs>
+          <div className="absolute top-0 left-0 w-full h-full opacity-20">
+            <img src="/images/logo.png" alt="Bannière promotionnelle" className="w-full h-full object-cover" />
           </div>
           
           <div className="relative z-10 flex flex-col md:flex-row justify-between items-center p-8 md:p-12">
