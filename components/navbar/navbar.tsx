@@ -206,7 +206,7 @@ export const NavbarComponent: React.FC = () => {
           <DrawerHeader className="flex justify-between items-center py-4">
             <Link href="/" onClick={() => setIsDrawerOpen(false)}>
               <span className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-500 text-transparent bg-clip-text">
-                SNOB
+                SITE WEB
               </span>
             </Link>
             {/* <button 
