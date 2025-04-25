@@ -3,12 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, ShoppingCart, X, Search, User, Heart } from "lucide-react";
+import { 
+  Menu, 
+  X, 
+  Search, 
+  User, 
+  // Heart 
+} from "lucide-react";
 import Link from "next/link";
 import {
   Facebook01Icon,
   InstagramIcon,
-  Search01Icon,
   TwitterIcon,
 } from "hugeicons-react";
 import {
@@ -20,7 +25,6 @@ import {
 } from "@heroui/react";
 
 export const NavbarComponent: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -41,8 +45,6 @@ export const NavbarComponent: React.FC = () => {
     { label: "À propos", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
-
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Animation variants
   const fadeIn = {
