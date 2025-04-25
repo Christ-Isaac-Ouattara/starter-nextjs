@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, ShoppingCart, X, Search, User, Heart } from "lucide-react";
-import { Cart } from "@/components/cart/cart";
-import { useCartStore } from "@/stores/cartStore";
 import Link from "next/link";
 import {
   Facebook01Icon,
@@ -39,13 +37,12 @@ export const NavbarComponent: React.FC = () => {
 
   const menuItems = [
     { label: "Accueil", href: "/" },
-    { label: "Boutique", href: "/shop" },
-    // { label: "À propos", href: "/about" },
+    // { label: "Boutique", href: "/shop" },
+    { label: "À propos", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { totalItems } = useCartStore();
 
   // Animation variants
   const fadeIn = {
@@ -87,7 +84,7 @@ export const NavbarComponent: React.FC = () => {
               {/* Logo */}
               <Link href="/" className="flex items-center ml-2 md:ml-0">
                 <span className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-500 text-transparent bg-clip-text tracking-tight">
-                  SNOB
+                  SITE WEB
                 </span>
               </Link>
             </div>
@@ -141,9 +138,12 @@ export const NavbarComponent: React.FC = () => {
                 ) : (
                   <motion.button
                     key="search-button"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    variants={searchVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
                     onClick={() => setIsSearchOpen(true)}
                     className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/50 transition-colors"
                     aria-label="Rechercher"
@@ -162,16 +162,16 @@ export const NavbarComponent: React.FC = () => {
               </button> */}
 
               {/* Compte - visible uniquement sur desktop */}
-              {/* <Link
-                href="/account"
+              <Link
+                href="/"
                 className="hidden md:flex p-2 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/50 transition-colors"
                 aria-label="Mon compte"
               >
                 <User size={20} />
-              </Link> */}
+              </Link>
 
               {/* Panier */}
-              <button
+              {/* <button
                 onClick={() => setIsOpen(true)}
                 className="relative p-2 rounded-full bg-violet-600 hover:bg-violet-700 text-white transition-colors"
                 aria-label="Panier"
@@ -186,7 +186,7 @@ export const NavbarComponent: React.FC = () => {
                     {totalItems}
                   </motion.span>
                 )}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -248,26 +248,26 @@ export const NavbarComponent: React.FC = () => {
               </div>
 
               {/* Actions supplémentaires */}
-              {/* <div className="pt-6 border-t border-gray-700/50">
+              <div className="pt-6 border-t border-gray-700/50">
                 <div className="grid grid-cols-2 gap-3">
                   <Link
-                    href="/account"
+                    href="/"
                     className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-800 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
                     onClick={() => setIsDrawerOpen(false)}
                   >
                     <User size={18} />
                     <span>Mon compte</span>
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/favorites"
                     className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-800 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
                     onClick={() => setIsDrawerOpen(false)}
                   >
                     <Heart size={18} />
                     <span>Favoris</span>
-                  </Link>
+                  </Link> */}
                 </div>
-              </div> */}
+              </div>
 
               {/* Réseaux sociaux */}
               <div className="pt-6 border-t border-gray-700/50">
@@ -312,8 +312,6 @@ export const NavbarComponent: React.FC = () => {
         </DrawerContent>
       </Drawer>
 
-      {/* Composant Cart */}
-      <Cart isOpen={isOpen} onCartClose={() => setIsOpen(false)} />
     </>
   );
 };

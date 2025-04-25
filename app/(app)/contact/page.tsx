@@ -1,7 +1,7 @@
-import {Contact} from "@/components/contact/contact"
+import Contact from "@/components/contact/contact";
 
-const contact = () =>{
-  return <Contact/>;
-}
+const contact = () => {
+  return <Contact />;
+};
 
 export default contact;
