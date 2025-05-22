@@ -1,8 +1,13 @@
-import type { Metadata } from "next";
 import "@/styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Navbar } from "@/components/navigation/navbar";
+import { Footer } from "@/components/sections/footer";
+import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "./providers";
-import { fontSans, geistSans, geistMono } from "@/config/fonts";
-import clsx from "clsx";
+
+const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,13 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='fr' suppressHydrationWarning>
-      <head>
-        <link rel="preload" href={fontSans.style.fontFamily} as="font" />
-      </head>
-      <body className={clsx("min-h-screen  bg-black/90 font-sans antialiased", fontSans.variable, geistMono.variable, geistSans.variable)}>
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Providers>
+          <div className="relative min-h-screen">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+          <Toaster />
         </Providers>
       </body>
     </html>
